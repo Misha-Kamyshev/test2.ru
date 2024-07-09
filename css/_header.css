@@ -1,0 +1,48 @@
+:focus {
+    outline: 2px solid gray;
+}
+
+header {
+    height: 100px;
+    background-color: rgb(219, 219, 219);
+} 
+
+header div {
+    display: inline;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+    margin-top: 25px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+header ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-top: 36px;
+    margin-right: 30px;
+}
+
+header li {
+    display: inline-block;
+    margin-right: 35px;
+    height: auto;
+}
+
+header li a {
+    font-size: 18pt;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+header li a:hover, header li a:focus {
+    background-color: rgb(68, 218, 113);
+}
