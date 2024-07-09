@@ -1,9 +1,10 @@
 <?php
     $name = $_POST["name"];
     $login = $_POST["login"];
+    $e_mail = $_POST["e-mail"];
     $password = $_POST["password"];
 
-    if (empty($login) || empty($password) || empty($name)) {
+    if (empty($login) || empty($password) || empty($name) || empty($e_mail)) {
         echo '
         <form id="Empty" method="post" action="../registration.php">
             <input type="hidden" name="message" value="Empty">
@@ -16,9 +17,9 @@
 
     require('connect.php');
 
-    $stmt = $BD->prepare("INSERT INTO `users` (name, login, password) values (?, ?, ?)");
+    $stmt = $BD->prepare("INSERT INTO `users` (name, login, e_mail, password) values (?, ?, ?, ?)");
 
-    $stmt->bind_param("sss", $name, $login, $password);
+    $stmt->bind_param("ssss", $name, $login, $e_mail, $password);
 
     if ($stmt->execute()) {
         $stmt->close();

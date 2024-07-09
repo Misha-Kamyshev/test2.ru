@@ -15,6 +15,8 @@
             <input type="text" name="name" placeholder="Имя пользователя" class="text">
             <p>Введите логин</p>
             <input type="text" name="login" placeholder="Логин" class="text">
+            <p>Введите E-mail</p>
+            <input type="text" name="e-mail" placeholder="E-mail" class="text">
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
             <?php
