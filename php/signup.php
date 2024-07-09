@@ -17,7 +17,7 @@
 
     require('connect.php');
 
-    $stmt = $BD->prepare("INSERT INTO `users` (name, login, e_mail, password) values (?, ?, ?, ?)");
+    $stmt = $BD->prepare("INSERT INTO `users` values (?, ?, ?, ?)");
 
     $stmt->bind_param("ssss", $name, $login, $e_mail, $password);
 
