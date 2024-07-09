@@ -21,7 +21,7 @@
 					else {
 						?>
 						<li><a href="#"><?php echo "{$_COOKIE['name']}";?></a></li>
-						<li><a href="#">Выйти из акаунта</a></li>
+						<li><a href="php/exit_account.php">Выйти из акаунта</a></li>
 						<?php
 					}
 				?>
