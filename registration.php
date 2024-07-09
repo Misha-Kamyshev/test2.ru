@@ -1,12 +1,12 @@
 <?php
     $message_error = $_POST['message'];
 
-    $title = 'Вход в аккаунт';
+    $title = 'Регистрация';
 
     require('php/_header.php');
 ?>
 
-<link rel="stylesheet" type="text/css" href="../css/autorisation_registration.css">
+<link rel="stylesheet" type="text/css" href="css/autorisation_registration.css">
 
 <section>
     <div>
@@ -18,9 +18,14 @@
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
             <?php
-                if (!empty($message_error)) {
+                if ($message_error == 'Error') {
                     ?>
                     <p style="font-size: 12pt; color: red; text-align: right; margin-top: 10px;">Имя пользователя уже занято</p>
+                    <?php
+                }
+                elseif ($message_error == 'Empty') {
+                    ?>
+                    <p style="font-size: 12pt; color: red; text-align: right; margin-top: 10px;">Все поля должны быть заполнены</p>
                     <?php
                 }
             ?>

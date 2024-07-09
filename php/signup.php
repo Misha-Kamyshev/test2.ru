@@ -3,6 +3,17 @@
     $login = $_POST["login"];
     $password = $_POST["password"];
 
+    if (empty($login) || empty($password) || empty($name)) {
+        echo '
+        <form id="Empty" method="post" action="../registration.php">
+            <input type="hidden" name="message" value="Empty">
+        </form>
+        <script type="text/javascript">
+            document.getElementById("Empty").submit();
+        </script>';
+        exit;
+    }
+
     require('connect.php');
 
     $stmt = $BD->prepare("INSERT INTO `users` (name, login, password) values (?, ?, ?)");

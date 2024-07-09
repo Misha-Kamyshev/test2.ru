@@ -2,6 +2,17 @@
     $login = $_POST['login'];
     $password = $_POST['password'];
 
+    if (empty($login) || empty($password)) {
+        echo '
+        <form id="Empty" method="post" action="../autorisation.php">
+            <input type="hidden" name="message" value="Empty">
+        </form>
+        <script type="text/javascript">
+            document.getElementById("Empty").submit();
+        </script>';
+        exit;
+    }
+
     require("connect.php");
 
     $stmt = $BD->prepare("SELECT password, name FROM `users` WHERE login = ?");

@@ -6,7 +6,7 @@
     require('php/_header.php');
 ?>
 
-<link rel="stylesheet" type="text/css" href="../css/autorisation_registration.css">
+<link rel="stylesheet" type="text/css" href="css/autorisation_registration.css">
 
 <section>
     <div>
@@ -16,17 +16,21 @@
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
             <?php
-                if (!empty($message_error)) {
+                if ($message_error == 'Error') {
                     ?>
                     <p style="font-size: 12pt; color: red; text-align: right; margin-top: 10px;">Логин или пароль<br>введены не верно</p>
                     <?php
                 }
+                elseif ($message_error == 'Empty') {
+                    ?>
+                    <p style="font-size: 12pt; color: red; text-align: right; margin-top: 10px;">Все поля должны быть заполнены</p>
+                    <?php
+                }
             ?>
             <p>
-                <a href="">Забыли пароль?</a>
+                <a href="forgot_your_password.php">Забыли пароль?</a>
                 <input type="submit" value="Войти" id="submit">
             </p>
-            
     </div>
 </section>
 
