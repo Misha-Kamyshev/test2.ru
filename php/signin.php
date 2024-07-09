@@ -4,18 +4,20 @@
 
     require("connect.php");
 
-    $stmt = $BD->prepare("SELECT password FROM `users` WHERE login = ?");
+    $stmt = $BD->prepare("SELECT password, name FROM `users` WHERE login = ?");
 
     $stmt->bind_param("s", $login);
 
     $stmt->execute();
 
-    $result = $stmt->get_result();
+    $result_array = $stmt->get_result();
 
-    if ($result->num_rows == 1) {
-        $result_password = $result->fetch_assoc();
+    if ($result_array->num_rows == 1) {
+        $result = $result_array->fetch_assoc();
 
-        if($result_password["password"] == $password) {
+        if($result["password"] == $password) {
+            setcookie('name', $result['name'], time() + 3600,'/');
+
             echo '
             <form id="Successful" method="post" action="../index.php">
                 <input type="hidden" name="message" value="successful">
@@ -28,7 +30,7 @@
     }
     
     echo '
-        <form id="ErrorMessage" method="post" action="autorisation.php">
+        <form id="ErrorMessage" method="post" action="../autorisation.php">
             <input type="hidden" name="message" value="Error">
         </form>
         <script type="text/javascript">

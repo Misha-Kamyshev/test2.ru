@@ -3,16 +3,16 @@
 
     $title = 'Вход в аккаунт';
 
-    require('_header.php');
+    require('php/_header.php');
 ?>
 
-<link rel="stylesheet" type="text/css" href="../css/autorisation.css">
+<link rel="stylesheet" type="text/css" href="../css/autorisation_registration.css">
 
 <section>
     <div>
-        <form name='signIn' method='post' action='signin.php'>
-            <p>Введите имя пользователя</p>
-            <input type="text" name="login" placeholder="Имя пользователя" class="text">
+        <form name='signIn' method='post' action='php/signin.php'>
+            <p>Введите логин</p>
+            <input type="text" name="login" placeholder="Логин" class="text">
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
             <?php
@@ -31,5 +31,5 @@
 </section>
 
 <?php
-    require('_footer.php');
+    require('php/_footer.php');
 ?>

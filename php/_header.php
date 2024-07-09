@@ -9,10 +9,22 @@
 <body>
 	<header>
 		<div>
-			<h1>Тестирование<br>онлайн</h1>
+			<h1><a href="../index.php">Тестирование<br>онлайн</a></h1>
 			<ul>
-				<li><a href="php/autorisation.php">Войти</a></li>
-				<li><a href="php/registration.php">Зарегистрироваться</a></li>
+				<?php
+					if ($_COOKIE['name'] == '0') {
+						?>
+						<li><a href="autorisation.php">Войти</a></li>
+						<li><a href="registration.php">Зарегистрироваться</a></li>
+						<?php
+					}
+					else {
+						?>
+						<li><a href="#"><?php echo "{$_COOKIE['name']}";?></a></li>
+						<li><a href="#">Выйти из акаунта</a></li>
+						<?php
+					}
+				?>
 			</ul>
 		</div>
 	</header>
