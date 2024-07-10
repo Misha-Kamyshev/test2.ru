@@ -6,19 +6,23 @@
     require('php/_header.php');
 ?>
 
-<link rel="stylesheet" type="text/css" href="css/autorisation_registration.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
 
 <section>
     <div>
         <form name='signIn' method='post' action='php/signup.php'>
             <p>Введите имя пользователя</p>
             <input type="text" name="name" placeholder="Имя пользователя" class="text">
+            <br>
             <p>Введите логин</p>
             <input type="text" name="login" placeholder="Логин" class="text">
+            <br>
             <p>Введите E-mail</p>
             <input type="text" name="e-mail" placeholder="E-mail" class="text">
+            <br>
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
+            <br>
             <?php
                 if ($_GET["Error"] == '202') {
                     ?>
@@ -31,9 +35,10 @@
                     <?php
                 }
             ?>
-            <p>
-                <input type="submit" value="Зарегистрироваться" id="submit">
-            </p>
+            <br>
+            <div class="block_submit">
+                <input type="submit" value="Зарегистрироваться" class="submit">
+            </div>
             
     </div>
 </section>

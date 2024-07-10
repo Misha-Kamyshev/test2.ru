@@ -6,15 +6,17 @@
     require('php/_header.php');
 ?>
 
-<link rel="stylesheet" type="text/css" href="css/autorisation_registration.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
 
 <section>
     <div>
         <form name='signIn' method='post' action='php/signin.php'>
             <p>Введите логин</p>
             <input type="text" name="login" placeholder="Логин" class="text">
+            <br>
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
+            <br>
             <?php
                 if ($_GET["Error"] == "202") {
                     ?>
@@ -27,10 +29,12 @@
                     <?php
                 }
             ?>
-            <p>
+            <br>
+            <div class="block_submit" style="display: flex; justify-content: space-between; margin: 0; width: auto;">
                 <a href="forgot_your_password.php">Забыли пароль?</a>
-                <input type="submit" value="Войти" id="submit">
-            </p>
+                <input type="submit" value="Войти" class="submit">
+            </div>
+        </form>
     </div>
 </section>
 

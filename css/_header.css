@@ -8,14 +8,16 @@ header {
 } 
 
 div.navigation {
-    display: inline;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 div.navigation > h1 {
-    float: left;
-    margin: 0;
+    margin-bottom: 0;
     margin-top: 25px;
     margin-left: 50px;
+    width: max-content;
     text-align: center;
 }
 
@@ -25,11 +27,11 @@ div.navigation > h1 > a {
 }
 
 ul.menu {
-    float: right;
     margin: 0;
     padding: 0;
     margin-top: 36px;
     margin-right: 30px;
+    width: max-content;
     display: flex;
 }
 
@@ -88,8 +90,10 @@ ul.submenu > li:hover {
 }
 
 ul.submenu > li > a {
+    display: block;
     text-decoration: none;
     color: black;
+    width: 100%;
 }
 
 

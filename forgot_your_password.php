@@ -7,7 +7,7 @@
 
     require("php/_header.php");
 ?>
-<link rel="stylesheet" type="text/css" href="css/autorisation_registration.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
 
 <section>
     <div>
@@ -20,7 +20,7 @@
                     <input type="password" name="password" placeholder="Пароль" class="text">
                     <input type="hidden" name="step" value="3"> 
                     <p>
-                        <input type="submit" value="Сохранить" id="submit">
+                        <input type="submit" value="Сохранить" class="submit">
                     </p>
                 </form>
 
@@ -59,7 +59,7 @@
                         }
                         ?>
                     <p>
-                        <input type="submit" value="Отправить код" id="submit">
+                        <input type="submit" value="Отправить код" class="submit">
                     </p>
                 </form>
 
@@ -74,7 +74,7 @@
                     <input type="text" name="pin" placeholder="Код" class="text">
                     <input type="hidden" name="step" value="2">
                     <p>
-                        <input type="submit" value="Проверить" id="submit">
+                        <input type="submit" value="Проверить" class="submit">
                     </p>
                 </form>
 

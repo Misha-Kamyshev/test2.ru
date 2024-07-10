@@ -1,0 +1,17 @@
+/* {
+	content: "";
+	display: table;
+	clear: both;
+}*/
+
+body {
+	margin: 0;
+}	
+
+section {
+	width: 70%;
+	margin: auto;
+	height: 1000px;
+	background-color: rgb(224, 224, 224);
+	margin-top: 20px;
+}
