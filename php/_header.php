@@ -8,9 +8,9 @@
 </head>
 <body>
 	<header>
-		<div>
+		<div class="navigation">
 			<h1><a href="../index.php">Тестирование<br>онлайн</a></h1>
-			<ul>
+			<ul class="menu">
 				<?php
 					if ($_COOKIE['name'] == '0' || !isset($_COOKIE['name'])) {
 						?>
@@ -20,8 +20,15 @@
 					}
 					else {
 						?>
-						<li><a href="#"><?php echo "{$_COOKIE['name']}";?></a></li>
-						<li><a href="php/exit_account.php">Выйти из акаунта</a></li>
+						<li><a href="#"><?php echo "{$_COOKIE['name']}";?></a>
+							<div class="outputList">
+								<ul class="submenu">
+									<li><a href="#">Тесты</a></li>
+									<li><a href="settings.php">Настройки</a></li>
+									<li><a href="php/exit_account.php">Выйти из акаунта</a></li>
+									</ul>
+							</div>
+						</li>
 						<?php
 					}
 				?>
