@@ -3,6 +3,7 @@ form {
     width: max-content;
     height: auto;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 input.text {
