@@ -12,7 +12,7 @@
 			<h1><a href="../index.php">Тестирование<br>онлайн</a></h1>
 			<ul>
 				<?php
-					if ($_COOKIE['name'] == '0') {
+					if ($_COOKIE['name'] == '0' || !isset($_COOKIE['name'])) {
 						?>
 						<li><a href="autorisation.php">Войти</a></li>
 						<li><a href="registration.php">Зарегистрироваться</a></li>
