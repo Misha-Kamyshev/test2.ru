@@ -5,13 +5,7 @@
     $password = $_POST["password"];
 
     if (empty($login) || empty($password) || empty($name) || empty($e_mail)) {
-        echo '
-        <form id="Empty" method="post" action="../registration.php">
-            <input type="hidden" name="message" value="Empty">
-        </form>
-        <script type="text/javascript">
-            document.getElementById("Empty").submit();
-        </script>';
+        header("Location: ../registration.php?Error=201");
         exit;
     }
 
@@ -24,25 +18,13 @@
     if ($stmt->execute()) {
         $stmt->close();
         setcookie("name", $name, time() + 3600, "/");
-
-        echo '
-            <form id="Successful" method="post" action="../index.php">
-                <input type="hidden" name="message" value="successful">
-            </form>
-            <script type="text/javascript">
-                document.getElementById("Successful").submit();
-            </script>';
+        header("Location: ../index.php");
+        exit;
     }
     else {
         $stmt->close();
-        setcookie("name", 0, time() + 3600, "/");
-        
-        echo '
-            <form id="Error" method="post" action="../registration.php">
-                <input type="hidden" name="message" value="Error">
-            </form>
-            <script type="text/javascript">
-                document.getElementById("Error").submit();
-            </script>';
+        // setcookie("name", 0, time() + 3600, "/");
+        header("Location: ../registration.php?Error=202");
+        exit;
     }
 ?>

@@ -16,12 +16,12 @@
             <p>Введите пароль</p>
             <input type="password" name="password" placeholder='Пароль' class="text">
             <?php
-                if ($message_error == 'Error') {
+                if ($_GET["Error"] == "202") {
                     ?>
                     <p style="font-size: 12pt; color: red; text-align: right; margin-top: 10px;">Логин или пароль<br>введены не верно</p>
                     <?php
                 }
-                elseif ($message_error == 'Empty') {
+                elseif ($_GET["Error"] == '201') {
                     ?>
                     <p style="font-size: 12pt; color: red; text-align: right; margin-top: 10px;">Все поля должны быть заполнены</p>
                     <?php

@@ -3,13 +3,7 @@
     $password = $_POST['password'];
 
     if (empty($login) || empty($password)) {
-        echo '
-        <form id="Empty" method="post" action="../autorisation.php">
-            <input type="hidden" name="message" value="Empty">
-        </form>
-        <script type="text/javascript">
-            document.getElementById("Empty").submit();
-        </script>';
+        header('Location: ../autorisation.php?Error=201');
         exit;
     }
 
@@ -22,34 +16,18 @@
     $stmt->execute();
 
     $result_array = $stmt->get_result();
+    
+    $stmt->close();
 
     if ($result_array->num_rows == 1) {
         $result = $result_array->fetch_assoc();
 
         if($result["password"] == $password) {
             setcookie('name', $result['name'], time() + 3600,'/');
-
-            echo '
-            <form id="Successful" method="post" action="../index.php">
-                <input type="hidden" name="message" value="successful">
-             </form>
-            <script type="text/javascript">
-                document.getElementById("Successful").submit();
-            </script>
-            ';
+            header('Location: ../index.php');
+            exit;
         }
     }
-    
-    echo '
-        <form id="ErrorMessage" method="post" action="../autorisation.php">
-            <input type="hidden" name="message" value="Error">
-        </form>
-        <script type="text/javascript">
-            document.getElementById("ErrorMessage").submit();
-        </script>';
-
-    $stmt->close();
-    
-    print($check_login);
+    header("Location: ../autorisation.php?Error=202");
+    exit;
 ?>
-
